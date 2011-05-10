@@ -16,6 +16,9 @@ ropel = 500 #Length of Rope
 roped = 24 #Diameter of Rope
 grooved = "Y" #Is drum grooved?
 
+def printoutput(layer, length, pcd, coils, cuml):
+	print("| {:d} | {:.2f} | {:.2f} | {:.2f} | {:.2f} |".format(layer,length,pcd,coils,cuml))
+
 length = 0
 cuml = 0
 flangd = 0
@@ -30,14 +33,14 @@ coils = round(drumw/aroped)
 delta = (aroped**2- aroped**2/4)**0.5
 
 print("delta: {: .2f}".format(delta))
-print("Layer | Length | PCD | Coils | Cumulative Length")
+print("| Layer | Length | PCD | Coils | Cumulative Length |")
 while (cuml < ropel):
     if (layer == 1):
+        table = ""
         pcd = drumd + aroped
         length = pcd/1000 * 3.14159 * coils
         cuml = length
-        print("{:d} | {:.2f} | {:.2f} | {:.2f} | {:.2f}".format(layer,length,pcd,coils,cuml))
-
+        printoutput(layer,length,pcd,coils,cuml)
         layer = 2
         
     else:
