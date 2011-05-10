@@ -1,0 +1,12 @@
+Author: Robert Markoski
+Version: 0.01
+
+Description:
+This small application calculates the amount of wrapsofrope around a winder drum.
+
+***Version Info ***
+v0.01 - Performing basic calculation correctly.
+
+*** Updates to Come ***
+1) Ability to accept live input. i.e not have to edit source file.
+2) Comment on Western Australian Mines Regulations regarding flange/rope height.

@@ -23,14 +23,15 @@ pcd = 0
 layer = 1 
 
 
-roped2 = roped * 1.02
+roped2 = roped * 1.02 #Include for rope stretch.
 layerb = round(drumw/roped2) #Estimate amount of layers on bottom layer of drum
 aroped = drumw/layerb #average diameter of rope
 coils = round(drumw/aroped)
 delta = (aroped**2- aroped**2/4)**0.5
 
 print("delta: {: .2f}".format(delta))
-while (cuml <= ropel):
+print("Layer | Length | PCD | Coils | Cumulative Length")
+while (cuml < ropel):
     if (layer == 1):
         pcd = drumd + aroped
         length = pcd/1000 * 3.14159 * coils
@@ -50,7 +51,7 @@ while (cuml <= ropel):
         if (cuml > ropel):
             ropeleft = ropel - (cuml - length)
             coils = round(ropeleft / (pcd/1000 * 3.14159))
-            cuml = round(cuml - length + pcd/1000 * 3.14159 * coils+1)
+            cuml = ropel
         print("{:d} | {:.2f} | {:.2f} | {:.2f} | {:.2f}".format(layer,length,pcd,coils,cuml))
         layer = layer +1
         
